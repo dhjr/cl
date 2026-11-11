@@ -1,0 +1,20 @@
+Algorithm: Three Address Code to Assembly Code Generation
+1. Start the program.
+2. Read a line of three-address code from the user.
+3. Remove all spaces, tabs and newline characters from the input.
+4. If the input is empty, continue to the next iteration.
+5. If the input starts with e, terminate the program.
+6. Use sscanf() to separate the expression into:
+   - Result variable
+   - First operand
+   - Operator
+   - Second operand
+7. If four components are identified:
+   - For +: Generate MOV, ADD and MOV instructions.
+   - For -: Generate MOV, SUB and MOV instructions.
+   - For *: Generate MOV, MOV, MUL and MOV instructions.
+   - For /: Generate MOV, MOV, MOV DX,0, DIV and MOV instructions.
+8. If only two components are identified, generate assignment instructions using MOV.
+9. If the input is invalid, display an error message.
+10. Repeat the process until the user enters e.
+11. Stop.

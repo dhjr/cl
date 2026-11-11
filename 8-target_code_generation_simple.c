@@ -15,17 +15,17 @@ int main()
     while (1)
     {
         fgets(line, sizeof(line), stdin);
-        int j=0;
+        // int j=0;
 
-        for (int i=0;line[i]!='\0';i++)
-        {
-            if (line[i] != ' ' && line[i] != '\t' && line[i] != '\n')
-                line1[j++] = line[i];
-        }
-        line1[j] = '\0';
+        // for (int i=0;line[i]!='\0';i++)
+        // {
+        //     if (line[i] != ' ' && line[i] != '\t' && line[i] != '\n')
+        //         line1[j++] = line[i];
+        // }
+        // line1[j] = '\0';
 
 
-        printf("%s",line1);
+        // printf("%s",line1);
 
         if (line[0] == '\n')
             continue;
@@ -33,7 +33,7 @@ int main()
         if (line[0] == 'e')
             break;
 
-        n = sscanf(line1, "%s=%s%c%s", result, op1, &opr, op2);
+        n = sscanf(line, "%s = %s %c %s", result, op1, &opr, op2);
 
         if (n == 4)
         {
