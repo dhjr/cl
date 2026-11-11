@@ -1,0 +1,15 @@
+TITLE: Count Number of Vowels and Consonants using LEX
+
+ALGORITHM:
+Step 1: Start.
+Step 2: Initialize counters: vowel_count = 0 and consonant_count = 0.
+Step 3: In the Lex rules section, define pattern matching actions:
+        - Match any vowel [aeiouAEIOU]: Increment vowel_count by 1.
+        - Match any other letter [a-zA-Z]: Increment consonant_count by 1.
+        - Match newline (\n): Terminate scanning by returning 0.
+        - Match any other character (.): Ignore it.
+Step 4: In the main function, prompt the user to enter a string.
+Step 5: Call yylex() to scan the user input.
+Step 6: Display the total count of vowels and consonants.
+Step 7: Stop.
+

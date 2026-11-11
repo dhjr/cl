@@ -1,0 +1,19 @@
+Algorithm: Target Code Generation (TAC to 8086 Assembly)
+
+1. Start the program.
+2. Read the number of Three Address Code (TAC) statements.
+3. Read all TAC statements from the user.
+4. Remove unnecessary spaces from each statement.
+5. Identify and collect all variables used in the TAC statements.
+6. Store unique variables in the symbol table.
+7. Generate the assembly program header (.MODEL, .STACK).
+8. Generate the .DATA section and declare all variables using DW.
+9. Generate the .CODE section and initialize the data segment.
+10. Process each TAC statement:
+    - For arithmetic expressions, generate MOV, ADD, SUB, MUL or DIV instructions.
+    - For assignment statements, generate MOV instructions.
+    - For IF conditions, generate CMP and conditional jump instructions.
+    - For GOTO statements, generate JMP instructions.
+    - For labels, print the corresponding label.
+11. Generate instructions to terminate the program.
+12. Stop the program.

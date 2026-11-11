@@ -1,0 +1,21 @@
+Algorithm: Recursive Descent Parser
+
+1. Start.
+2. Initialize pos = 0 and error = 0.
+3. Read the input string.
+4. Call E() to begin parsing.
+5. In E(), call T() followed by Eprime().
+6. In Eprime():
+   - If the current character is +, advance pos, call T(), and recursively call Eprime().
+   - Otherwise, return (ε).
+7. In T(), call F() followed by Tprime().
+8. In Tprime():
+   - If the current character is *, advance pos, call F(), and recursively call Tprime().
+   - Otherwise, return (ε).
+9. In F():
+   - If the current character is (, advance pos, call E(), and check for ). If found, advance pos; otherwise, set error = 1.
+   - If the current character is i, advance pos.
+   - Otherwise, set error = 1.
+10. After parsing, check whether error == 0 and the current character is '\0'.
+11. If both conditions are satisfied, print String Accepted; otherwise, print String Rejected.
+12. Stop.

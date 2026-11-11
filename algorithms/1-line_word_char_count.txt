@@ -1,0 +1,17 @@
+TITLE: Count Number of Lines, Words, Spaces, and Characters using LEX
+
+ALGORITHM:
+Step 1: Start.
+Step 2: Initialize counters: ctLine = 0, ctWord = 0, ctChar = 0, ctSpace = 0.
+Step 3: Check if the input file name is passed as a command-line argument. If not, print usage instructions and exit.
+Step 4: Open the specified file in read mode and assign the file pointer to yyin.
+Step 5: In the Lex rules section, define patterns and actions:
+        - Match a word ([a-zA-Z0-9]+): Increment ctWord by 1 and increment ctChar by yyleng.
+        - Match a blank space ([ ]): Increment ctSpace by 1 and increment ctChar by 1.
+        - Match a newline (\n): Increment ctLine by 1 and increment ctChar by 1.
+        - Match any other character (.): Increment ctChar by 1.
+Step 6: In the main function, call yylex() to scan and process the input file.
+Step 7: Print the total counts of lines, words, spaces, and characters.
+Step 8: Close the input file using fclose(yyin).
+Step 9: Stop.
+

@@ -1,0 +1,23 @@
+TITLE: Implementation of Lexical Analyzer in C
+
+ALGORITHM:
+Step 1: Start.
+Step 2: Store the list of C keywords (int, float, char, if, else, while, for, etc.) in a 2D array and implement a helper function isKeyword() using string comparison.
+Step 3: Open the C source file (e.g., "5-input.c") in read mode. If opening fails, display an error message and terminate.
+Step 4: Read characters from the file one by one until EOF:
+        a. Whitespace: If character is space, tab, or newline, ignore and continue.
+        b. Comments: If character is '/', inspect the next character:
+           - If '/', skip all characters until newline or EOF.
+           - If '*', skip all characters until closing "*/" is encountered.
+           - Otherwise, push back the character and treat '/' as an operator.
+        c. Identifiers and Keywords: If character is an alphabet or '_', accumulate subsequent alphanumeric characters and '_' into a buffer.
+           - If buffer matches isKeyword(), print it as "Keyword".
+           - Otherwise, print it as "Identifier".
+        d. Numbers: If character is a digit, accumulate digits and at most one '.' into a buffer and print as "Number".
+        e. Strings: If character is '"', read until matching '"' and print as "String".
+        f. Operators: If character matches any operator (+, -, *, /, =, <, >, !, &, |), check the next character for multi-character operators (==, !=, <=, >=, ++, --, &&, ||). Print the operator accordingly.
+        g. Special Symbols: If character is one of (, ), {, }, [, ], ;, ,, ., print as "Special Symbol".
+        h. Any other character is printed as "Invalid Token".
+Step 5: Close the file.
+Step 6: Stop.
+

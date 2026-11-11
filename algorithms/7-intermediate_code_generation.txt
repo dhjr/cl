@@ -1,0 +1,17 @@
+Algorithm: Three Address Code Generation from Arithmetic Expression
+
+1. Start the program.
+2. Initialize the operator stack, value stack and temporary variable counter.
+3. Read an arithmetic expression from the user.
+4. Scan the expression character by character.
+5. If the character is an operand, push it into the value stack.
+6. If the character is an opening parenthesis (, push it into the operator stack.
+7. If the character is a closing parenthesis ), pop operators and generate three address code until an opening parenthesis is found.
+8. If the character is an operator:
+   - Check the precedence of the current operator and the operator at the top of the stack.
+   - Generate code for higher or equal precedence operators.
+   - Push the current operator into the operator stack.
+9. After scanning the expression, process all remaining operators in the operator stack.
+10. Generate a new temporary variable for each operation and push the result into the value stack.
+11. Display the generated Three Address Code and final result.
+12. Stop the program.
